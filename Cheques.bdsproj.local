@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/13 08:42:58.406.bdsproj,C:\Users\Hansel Vielman\Documents\Borland Studio Projects\Project1.bdsproj=C:\Users\Hansel Vielman\Documents\Borland Studio Projects\Cheques.bdsproj</Transaction>
+    <Transaction>2021/12/13 08:43:44.093.pas,C:\Users\Hansel Vielman\Documents\Borland Studio Projects\Unit1.pas=C:\sistemas\trunk\cheques\fufrmCheques.pas</Transaction>
+    <Transaction>2021/12/13 08:43:44.093.dfm,C:\Users\Hansel Vielman\Documents\Borland Studio Projects\Unit1.dfm=C:\sistemas\trunk\cheques\fufrmCheques.dfm</Transaction>
+    <Transaction>2021/12/13 08:44:35.977.bdsproj,C:\Users\Hansel Vielman\Documents\Borland Studio Projects\Cheques.bdsproj=C:\sistemas\trunk\cheques\Cheques2.bdsproj</Transaction>
+    <Transaction>2021/12/16 09:21:20.515.pas,C:\sistemas\trunk\cheques\Unit1.pas=C:\sistemas\trunk\cheques\dmCheques.pas</Transaction>
+    <Transaction>2021/12/16 09:21:20.515.dfm,C:\sistemas\trunk\cheques\Unit1.dfm=C:\sistemas\trunk\cheques\dmCheques.dfm</Transaction>
+    <Transaction>2021/12/16 09:22:01.488.pas,C:\sistemas\trunk\cheques\dmCheques.pas=C:\sistemas\trunk\cheques\udmCheques.pas</Transaction>
+    <Transaction>2021/12/16 09:22:01.488.dfm,C:\sistemas\trunk\cheques\dmCheques.dfm=C:\sistemas\trunk\cheques\udmCheques.dfm</Transaction>
+    <Transaction>2021/12/16 13:25:07.726.bdsproj,C:\sistemas\trunk\cheques\Cheques2.bdsproj=C:\sistemas\trunk\cheques\Cheques.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

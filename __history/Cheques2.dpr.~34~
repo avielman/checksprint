@@ -1,0 +1,73 @@
+program Cheques2;
+
+uses
+  Forms,
+  fufrmCheques in 'fufrmCheques.pas' {frmPrincipal},
+  ufrmcheques in 'ufrmcheques.pas' {frmImprimirCheque},
+  SysUtils,
+  Dialogs,
+  types,
+  Windows,
+  uFACEConst,
+  udmCheques in 'udmCheques.pas' {dmCheques: TDataModule};
+
+{$R *.res}
+var
+  dmCheques: TdmCheques;
+
+function fParams(AParam: string): string;
+begin
+  Result := StringReplace(AParam, '"', '', [rfReplaceAll]);
+end;
+
+procedure ScanParams;
+var
+  i: Integer;
+//  AliasName: string;
+begin
+  if ParamCount > 0 then
+  begin
+    if Assigned(dmCheques) then
+    begin
+      for i:=1 to ParamCount do
+      begin
+        if Pos('-NEGOCIABLE:',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Negociable := fParams(Copy(ParamStr(i),13,length(ParamStr(i))))
+        else
+        if Pos('-FECHA:',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Fecha := fParams(Copy(ParamStr(i),8,length(ParamStr(i))))
+        else
+        if Pos('-NOMBRE:',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Nombre := fParams(Copy(ParamStr(i),9,length(ParamStr(i))))
+        else
+        if Pos('-VALOR:',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Valor := fParams(Copy(ParamStr(i),8,length(ParamStr(i))))
+        else
+        if Pos('-MONEDA',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Moneda :=  fParams(Copy(ParamStr(i),8,length(ParamStr(i))))
+        else
+        if Pos('-AUTORIZACION:',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Autorizacion := Copy(ParamStr(i),15,length(ParamStr(i)))
+        else
+        if Pos('-CONCEPTO',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Concepto:=  fParams(Copy(ParamStr(i),10,length(ParamStr(i))))
+        else
+        if Pos('-DOCUMENTO:',UpperCase(ParamStr(i))) > 0 then
+          dmCheques.Documento := fParams(Copy(ParamStr(i),12,length(ParamStr(i))));
+      end;
+    end;
+  end;
+end;
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  if not Assigned(dmCheques) then
+    dmCheques := frmPrincipal.dmCheques;
+//  Application.CreateForm(TdmCheques, dmCheques);
+  ScanParams;
+  frmPrincipal.acImprimirExecute(nil);
+  Application.Run;
+  frmPrincipal.acCloseExecute(nil);
+  Application.FreeOnRelease;
+end.
