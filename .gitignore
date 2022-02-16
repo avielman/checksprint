@@ -1,1 +1,4 @@
 Cheques.exe
+*.exe 
+*.dll
+*.identcache
